@@ -1,4 +1,4 @@
-CC = gcc
+CC = gcc-14
 BUILD = build
 RAY_HOME=/opt/homebrew/Cellar/raylib/5.0
 RAY_LIB = ${RAY_HOME}/lib
