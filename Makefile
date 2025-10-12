@@ -9,13 +9,16 @@ CFLAGS = -Wall -Wextra -pedantic -I"${RAY_INCLUDE}"
 LDFLAGS = -L"${RAY_LIB}" -lraylib -framework OpenGL -framework Cocoa -framework IOKit -framework CoreAudio -framework CoreVideo -Wl,-rpath,"${RAY_LIB}"
 
 .PHONY: all
-all: chessboard
+all: chessboard projectile
 
 $(BUILD):
 	mkdir -p $(BUILD)
 
 chessboard: $(BUILD) $(SRC)/chessboard.c
 	$(CC) $(CFLAGS) -o $(BUILD)/chessboard $(SRC)/chessboard.c $(LDFLAGS)
+
+projectile: $(BUILD) $(SRC)/projectile.c
+	$(CC) $(CFLAGS) -o $(BUILD)/projectile $(SRC)/projectile.c $(LDFLAGS)
 
 clean:
 	rm -rf $(BUILD)
