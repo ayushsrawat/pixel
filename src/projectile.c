@@ -45,9 +45,15 @@ int main(void) {
 			DrawLineEx((Vector2){origin.x - neg_len, origin.y}, (Vector2){origin.x + x_len - neg_len, origin.y}, 2, WHITE); // x axis
 			DrawText("x", origin.x + x_len - 100, origin.y + 5, 4, WHITE);
 			DrawLineEx((Vector2){origin.x, origin.y + neg_len}, (Vector2){origin.x, origin.y - (y_len - neg_len)}, 2, WHITE); // y axis
-			DrawText("y", origin.x + 5, origin.y - y_len + 100, 4, WHITE);
-			
+			DrawText("y", origin.x - 15, origin.y - y_len + 100, 4, WHITE);
 			DrawCircleV(path, radius, BLUE);
+
+			char path_x[20];
+			sprintf(path_x, "%.2f", path.x - origin.x);
+			DrawText(path_x, path.x, origin.y + 5, 4, BLUE);
+			sprintf(path_x, "%.2f", origin.y - path.y);
+			DrawText(path_x, origin.x - 35, path.y, 4, BLUE);
+
 			DrawLineEx((Vector2){origin.x, origin.y}, (Vector2) {path.x, origin.y}, 3, GREEN);
 			DrawLineEx((Vector2){origin.x, origin.y}, (Vector2) {origin.x, path.y}, 3, GREEN);
 			DrawLineEx((Vector2){path.x, origin.y}, (Vector2) {path.x, path.y}, 1, PURPLE);
