@@ -6,7 +6,8 @@ RAY_LIB = ${RAY_HOME}/lib
 RAY_INCLUDE = ${RAY_HOME}/include
 
 CFLAGS = -Wall -Wextra -pedantic -I"${RAY_INCLUDE}"
-LDFLAGS = -L"${RAY_LIB}" -lraylib -framework OpenGL -framework Cocoa -framework IOKit -framework CoreAudio -framework CoreVideo -Wl,-rpath,"${RAY_LIB}"
+LDFLAGS = -L"${RAY_LIB}" -lraylib -Wl,-rpath,"${RAY_LIB}"
+#LDFLAGS = -L"${RAY_LIB}" -lraylib -framework OpenGL -framework Cocoa -framework IOKit -framework CoreAudio -framework CoreVideo -Wl,-rpath,"${RAY_LIB}"
 
 .PHONY: all
 all: chessboard projectile
