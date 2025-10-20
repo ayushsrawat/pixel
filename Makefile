@@ -10,7 +10,7 @@ LDFLAGS = -L"${RAY_LIB}" -lraylib -Wl,-rpath,"${RAY_LIB}"
 #LDFLAGS = -L"${RAY_LIB}" -lraylib -framework OpenGL -framework Cocoa -framework IOKit -framework CoreAudio -framework CoreVideo -Wl,-rpath,"${RAY_LIB}"
 
 .PHONY: all
-all: chessboard projectile
+all: chessboard projectile dipawali
 
 $(BUILD):
 	mkdir -p $(BUILD)
@@ -20,6 +20,9 @@ chessboard: $(BUILD) $(SRC)/chessboard.c
 
 projectile: $(BUILD) $(SRC)/projectile.c
 	$(CC) $(CFLAGS) -o $(BUILD)/projectile $(SRC)/projectile.c $(LDFLAGS)
+
+dipawali: $(BUILD) $(SRC)/dipawali.c
+	$(CC) $(CFLAGS) -o $(BUILD)/dipawali $(SRC)/dipawali.c $(LDFLAGS)
 
 clean:
 	rm -rf $(BUILD)
